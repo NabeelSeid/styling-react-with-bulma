@@ -1,7 +1,13 @@
 import React, { Component } from 'react'
 
 // Components
-import { Navbar, SidebarMenu, Toolbar, BookItem } from './children'
+import {
+  Navbar,
+  SidebarMenu,
+  Toolbar,
+  BookItem,
+  Pagination,
+} from './children'
 
 const books = [
   {
@@ -90,6 +96,9 @@ export default class Home extends Component {
                   </div>
                 ))}
               </div>
+
+              {/* Pagination */}
+              <Pagination />
             </div>
           </div>
         </section>
