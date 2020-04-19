@@ -18,11 +18,11 @@ export default props => {
           <p className="title is-5 is-spaced is-marginless">
             <a href="#self">{bookTitle}</a>
           </p>
-          <p className="subtitle is-marginless">{bookPrice}</p>
+          <p className="subtitle is-marginless">${bookPrice}</p>
           <div className="content is-small">
-            {bookPage}
+            {bookPage} pages
             <br />
-            {bookISBN}
+            ISBN: {bookISBN}
             <br />
             <a href="#self">Edit</a>
             <span> · </span>
