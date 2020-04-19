@@ -1,12 +1,13 @@
 import React from 'react'
 
 //Components
-import Login from '../Login'
+import Login from '../Screens/Login'
+import Home from '../Screens/Home'
 
 function App() {
   return (
     <div className="App">
-      <Login />
+      <Home />
     </div>
   )
 }
