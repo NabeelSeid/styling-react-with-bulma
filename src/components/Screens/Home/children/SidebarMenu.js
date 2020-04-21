@@ -1,6 +1,6 @@
 import React from 'react'
-import classNames from 'classnames'
 import { BulmaFAIcon } from '../../../utils'
+import { NavLink } from 'react-router-dom'
 
 // FontAwesome Icons
 import {
@@ -11,25 +11,18 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 
 const MenuItem = props => {
-  const { menuTitle, menuIcon, activeMenu, onMenuItemChange } = props
-
-  const menuItemClass = classNames({
-    'is-active': activeMenu === menuTitle,
-  })
-
-  const onClickListener = () => onMenuItemChange(menuTitle)
+  const { menuTitle, menuIcon } = props
 
   return (
     <li>
-      <a
-        href="#self"
-        className={menuItemClass}
-        onClick={onClickListener}>
+      <NavLink
+        to={`/${menuTitle.toLowerCase()}`}
+        activeClassName="is-active">
         <span className="icon">
           <BulmaFAIcon icon={menuIcon} />
         </span>
         {menuTitle}
-      </a>
+      </NavLink>
     </li>
   )
 }
@@ -42,8 +35,6 @@ export default props => {
     { title: 'Orders', icon: faFile },
   ]
 
-  const { activeMenu, onMenuItemChange } = props
-
   return (
     <nav className="menu">
       <p className="menu-label">Menu</p>
@@ -53,8 +44,6 @@ export default props => {
             key={item.title}
             menuTitle={item.title}
             menuIcon={item.icon}
-            activeMenu={activeMenu}
-            onMenuItemChange={onMenuItemChange}
           />
         ))}
       </ul>

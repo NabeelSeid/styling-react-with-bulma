@@ -4,11 +4,6 @@ import React, { Component } from 'react'
 import { Navbar, SidebarMenu, Books } from './children'
 
 export default class Home extends Component {
-  state = { activeMenu: 'Books' }
-
-  onMenuItemChange = menuTitle =>
-    this.setState({ activeMenu: menuTitle })
-
   render() {
     return (
       <section>
@@ -19,10 +14,7 @@ export default class Home extends Component {
           <div className="columns">
             {/* Sidebar Menu */}
             <div className="column is-4-tablet is-3-desktop is-2-widescreen">
-              <SidebarMenu
-                activeMenu={this.state.activeMenu}
-                onMenuItemChange={this.onMenuItemChange}
-              />
+              <SidebarMenu />
             </div>
 
             {/* Detail Body */}
