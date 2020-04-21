@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
+import { Switch, Route } from 'react-router-dom'
 
 // Components
-import { Navbar, SidebarMenu, Books } from './children'
+import { Navbar, SidebarMenu, Books, NewBook } from './children'
 
 export default class Home extends Component {
   render() {
@@ -19,7 +20,14 @@ export default class Home extends Component {
 
             {/* Detail Body */}
             <div className="column">
-              <Books />
+              <Switch>
+                <Route exact path="/books">
+                  <Books />
+                </Route>
+                <Route exact path="/books/new">
+                  <NewBook />
+                </Route>
+              </Switch>
             </div>
           </div>
         </section>
